@@ -97,3 +97,30 @@ SET
     MOBILE='1145322234'
 WHERE
     REG_NO='22002';
+
+-- 3. (viii) Remove enrollment information of a
+-- student from a particular course interactively.
+-- How would you recover the data?
+-- By creating a savepoint and rollbacking to it.
+SAVEPOINT BEFORE_VIII;
+
+DELETE FROM ENROLL
+WHERE
+    REG_NO='22002';
+
+ROLLBACK TO BEFORE_VIII;
+
+-- (ix) Create a duplicate of course table
+-- Drop table in case it exists
+DROP TABLE COURSE_DUPLICATE;
+
+CREATE TABLE COURSE_DUPLICATE AS
+    SELECT
+        *
+    FROM
+        COURSE;
+
+-- (x)  Create a view for list of  
+-- students (Reg_no, Sname) and the 
+-- courses they have registered along  with 
+-- name of professors teaching the course

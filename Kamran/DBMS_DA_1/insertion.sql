@@ -20,6 +20,7 @@ DELETE FROM SCHOOL;
 
 DELETE FROM PROFESSOR;
 
+--- PROFESSOR ---
 INSERT INTO PROFESSOR VALUES(
     'PR001',
     'PROFESSOR_1',
@@ -44,6 +45,7 @@ INSERT INTO PROFESSOR VALUES(
     'Neurosurgery'
 );
 
+--- SCHOOL ---
 INSERT INTO SCHOOL VALUES(
     'SCH001',
     'School of Statistics',
@@ -65,6 +67,7 @@ INSERT INTO SCHOOL VALUES(
     'SMV'
 );
 
+--- DEPARTMENT ---
 INSERT INTO DEPARTMENT VALUES(
     'DEPT001',
     'STATISTICS',
@@ -77,6 +80,7 @@ INSERT INTO DEPARTMENT VALUES(
     'SCH002'
 );
 
+--- STUDENT ---
 -- 1.
 INSERT INTO STUDENT VALUES(
     '22001',
@@ -113,12 +117,14 @@ INSERT INTO STUDENT VALUES(
     'PR002'
 );
 
+--- STUDENT_VISA ---
 -- 3.
 INSERT INTO STUDENT_VISA VALUES(
     '22003',
     'ACCEPTED'
 );
 
+--- COURSE ---
 -- 4.
 INSERT INTO COURSE VALUES(
     'CRS002',
@@ -142,4 +148,42 @@ INSERT INTO COURSE VALUES(
     'THIS IS THE COURSE 1',
     2,
     40
+);
+
+--- SEMESTER ---
+-- 8.
+INSERT INTO SEMESTER VALUES(
+    'WIN001',
+    'Winter',
+    2022,
+    '01-NOV-2022',
+    '01-MAR-2023'
+);
+
+--- CLASS ---
+
+-- 1. (ii) Use timestamp data type without
+-- fractional parts of seconds for start
+-- time and end time column of
+-- class table
+ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "DD-MM-YYYY HH24:MI:SS";
+
+INSERT INTO CLASS VALUES(
+    'CLS001',
+    'A1/B1',
+    '01-11-2022 14:00:00',
+    '05-12-2022 17:00:00',
+    'CRS001',
+    'PR001',
+    '101',
+    'WIN001',
+    '5'
+);
+
+--- ENROLL ---
+INSERT INTO ENROLL VALUES(
+    'CLS001',
+    '22002',
+    '29-10-2022 10:31:50',
+    'C'
 );
