@@ -45,6 +45,14 @@ INSERT INTO PROFESSOR VALUES(
     'Neurosurgery'
 );
 
+INSERT INTO PROFESSOR VALUES(
+    'PR004',
+    'PROFESSOR_4',
+    'prof_4@email.com',
+    1245120566,
+    'Oncology'
+);
+
 --- SCHOOL ---
 INSERT INTO SCHOOL VALUES(
     'SCH001',
@@ -153,11 +161,27 @@ INSERT INTO COURSE VALUES(
 --- SEMESTER ---
 -- 8.
 INSERT INTO SEMESTER VALUES(
-    'WIN001',
+    'WIN22',
     'Winter',
     2022,
     '01-NOV-2022',
     '01-MAR-2023'
+);
+
+INSERT INTO SEMESTER VALUES(
+    'FALL22',
+    'Fall',
+    2022,
+    '01-APR-2022',
+    '20-SEP-2022'
+);
+
+INSERT INTO SEMESTER VALUES(
+    'FALL17',
+    'Fall',
+    2017,
+    '01-APR-2017',
+    '20-SEP-2017'
 );
 
 --- CLASS ---
@@ -166,24 +190,62 @@ INSERT INTO SEMESTER VALUES(
 -- fractional parts of seconds for start
 -- time and end time column of
 -- class table
-ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "DD-MM-YYYY HH24:MI:SS";
+ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "HH24:MI:SS";
+
+INSERT INTO CLASS VALUES(
+    'CLS002',
+    'C2/G1',
+    '10:00:00',
+    '12:00:00',
+    'CRS002',
+    'PR002',
+    104,
+    'FALL22',
+    'Wednesday'
+);
 
 INSERT INTO CLASS VALUES(
     'CLS001',
     'A1/B1',
-    '01-11-2022 14:00:00',
-    '05-12-2022 17:00:00',
+    '14:00:00',
+    '17:00:00',
     'CRS001',
     'PR001',
-    '101',
-    'WIN001',
-    '5'
+    101,
+    'WIN22',
+    'Wednesday'
+);
+
+INSERT INTO CLASS VALUES(
+    'CLS003',
+    'T1/A1',
+    '08:00:00',
+    '10:00:00',
+    'CRS003',
+    'PR004',
+    105,
+    'FALL17',
+    'Friday'
 );
 
 --- ENROLL ---
 INSERT INTO ENROLL VALUES(
     'CLS001',
     '22002',
-    '29-10-2022 10:31:50',
+    '10:31:50',
     'C'
+);
+
+INSERT INTO ENROLL VALUES(
+    'CLS002',
+    '22001',
+    '14:31:25',
+    'A'
+);
+
+INSERT INTO ENROLL VALUES(
+    'CLS003',
+    '22002',
+    '02:35:00',
+    'D'
 );
