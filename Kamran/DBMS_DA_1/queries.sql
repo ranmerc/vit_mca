@@ -323,6 +323,19 @@ WHERE
     AND CLASS.PROF_ID = PROFESSOR.PROF_ID
     AND PROFESSOR.PROF_NAME = 'O''Brien';
 
--- 3. (xviii) List the registration number of the students 
--- who registered in Database Systems course on 
+-- only works on vscode
+-- 3. (xviii) List the registration number of the students
+-- who registered in Database Systems course on
 -- November 17, 2017
+SELECT
+    STUDENT.REG_NO
+FROM
+    STUDENT,
+    ENROLL,
+    CLASS
+WHERE
+    ENROLL.REG_NO = STUDENT.REG_NO
+    AND ENROLL.CLS_CODE = CLASS.CLS_CODE
+    AND ENROLL.ENROLL_TIME >= '17-NOV-2017'
+    AND ENROLL.ENROLL_TIME < '18-NOV-2017'
+    AND CLASS.CRS_CODE = 'DBMS';
