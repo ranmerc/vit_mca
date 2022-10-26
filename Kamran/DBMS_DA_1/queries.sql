@@ -448,3 +448,21 @@ WHERE
     AND ENROLL.CLS_CODE = CLASS.CLS_CODE
     AND CLASS.CRS_CODE = COURSE.CRS_CODE
     AND CLASS.SEM_CODE = 'FALL17';
+
+-- 3. (xxv) Display the name of the courses that are not
+-- being offered in Winter 17-18 (Winter 2018).
+SELECT
+    COURSE.CRS_NAME
+FROM
+    COURSE
+WHERE
+    COURSE.CRS_CODE NOT IN(
+        SELECT
+            COURSE.CRS_CODE
+        FROM
+            CLASS,
+            COURSE
+        WHERE
+            CLASS.SEM_CODE = 'WIN18'
+            AND CLASS.CRS_CODE = COURSE.CRS_CODE
+    )
