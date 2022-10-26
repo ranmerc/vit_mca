@@ -11,3 +11,5 @@
 4. [EXTRACT (datetime)](https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions059.htm#SQLRF00639)
 
 5. [Number data type showing up as # in SQL Plus](https://stackoverflow.com/a/20150218/10469084)
+
+6. [Select Multiple Values From Single Column](https://stackoverflow.com/questions/14423188/select-multiple-values-from-single-column)

@@ -53,6 +53,14 @@ INSERT INTO PROFESSOR VALUES(
     'Oncology'
 );
 
+INSERT INTO PROFESSOR VALUES(
+    'PR005',
+    'PROFESSOR_5',
+    'prof_5@email.com',
+    2353415125,
+    'Computer Science'
+);
+
 --- SCHOOL ---
 INSERT INTO SCHOOL VALUES(
     'SCH001',
@@ -158,6 +166,22 @@ INSERT INTO COURSE VALUES(
     40
 );
 
+INSERT INTO COURSE VALUES(
+    'DBMS',
+    'Database Systems',
+    'This is database systems',
+    8,
+    60
+);
+
+INSERT INTO COURSE VALUES(
+    'OS',
+    'Operating Systems',
+    'This is operating systems',
+    10,
+    100
+);
+
 --- SEMESTER ---
 -- 8.
 INSERT INTO SEMESTER VALUES(
@@ -182,6 +206,14 @@ INSERT INTO SEMESTER VALUES(
     2017,
     '01-APR-2017',
     '20-SEP-2017'
+);
+
+INSERT INTO SEMESTER VALUES(
+    'FALL16',
+    'Fall',
+    2016,
+    '01-APR-2016',
+    '20-SEP-2016'
 );
 
 --- CLASS ---
@@ -228,6 +260,30 @@ INSERT INTO CLASS VALUES(
     'Friday'
 );
 
+INSERT INTO CLASS VALUES(
+    'CLS004',
+    'B1/A1',
+    '12:00:00',
+    '14:00:00',
+    'DBMS',
+    'PR005',
+    113,
+    'FALL16',
+    'Tuesday'
+);
+
+INSERT INTO CLASS VALUES(
+    'CLS005',
+    'F2/G1',
+    '17:00:00',
+    '19:00:00',
+    'OS',
+    'PR005',
+    120,
+    'FALL16',
+    'Saturday'
+);
+
 --- ENROLL ---
 INSERT INTO ENROLL VALUES(
     'CLS001',
@@ -248,4 +304,18 @@ INSERT INTO ENROLL VALUES(
     '22002',
     '02:35:00',
     'D'
+);
+
+INSERT INTO ENROLL VALUES(
+    'CLS004',
+    '22003',
+    '02:35:00',
+    'F'
+);
+
+INSERT INTO ENROLL VALUES(
+    'CLS005',
+    '22003',
+    '06:00:00',
+    'A'
 );
