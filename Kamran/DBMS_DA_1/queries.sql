@@ -264,3 +264,26 @@ FROM
         ON SEMESTER.SEM_CODE = CLASS.SEM_CODE
         AND SEMESTER.YEAR = 2018
         AND SEMESTER.TERM = 'Winter';
+
+-- 3. (xv) List the registration number and name of
+-- the students who have registered for maximum
+-- number of credits in Winter 17-18 (Winter 2018)
+-- semester. (Assume that the maximum number of
+-- credits = 26)
+SELECT
+    STUDENT.REG_NO,
+    STUDENT.SNAME
+FROM
+    STUDENT,
+    ENROLL,
+    CLASS,
+    COURSE
+WHERE
+    STUDENT.REG_NO = ENROLL.REG_NO
+    AND CLASS.CLS_CODE = ENROLL.CLS_CODE
+    AND CLASS.CRS_CODE = COURSE.CRS_CODE
+GROUP BY
+    STUDENT.REG_NO,
+    STUDENT.SNAME
+HAVING
+    SUM(COURSE.CREDITS) = 26;
