@@ -287,3 +287,42 @@ GROUP BY
     STUDENT.SNAME
 HAVING
     SUM(COURSE.CREDITS) = 26;
+
+-- 3. (xvi) List the name of the course and the number
+-- of students registered in each slot for course under
+-- different faculty members.
+SELECT
+    COURSE.CRS_NAME,
+    COUNT(ENROLL.REG_NO),
+    SLOT
+FROM
+    COURSE,
+    ENROLL,
+    CLASS
+WHERE
+    ENROLL.CLS_CODE = CLASS.CLS_CODE
+    AND CLASS.CRS_CODE = COURSE.CRS_CODE
+GROUP BY
+    ENROLL.REG_NO,
+    COURSE.CRS_NAME,
+    SLOT;
+
+-- 3. (xvii) Find out the name of the students who have
+-- registered in all the courses being taught by
+-- Prof. O'Brien in Winter 17-18 (Winter 2018).
+SELECT
+    STUDENT.SNAME
+FROM
+    STUDENT,
+    PROFESSOR,
+    CLASS,
+    ENROLL
+WHERE
+    ENROLL.CLS_CODE = CLASS.CLS_CODE
+    AND ENROLL.REG_NO = STUDENT.REG_NO
+    AND CLASS.PROF_ID = PROFESSOR.PROF_ID
+    AND PROFESSOR.PROF_NAME = 'O''Brien';
+
+-- 3. (xviii) List the registration number of the students 
+-- who registered in Database Systems course on 
+-- November 17, 2017
