@@ -411,3 +411,22 @@ HAVING
             STUDENT,
             DEPARTMENT
     );
+
+-- 3. (xxiii) Given the registration number of a student,
+-- display the total credits registered by him/her in
+-- Winter 17-18 (Winter 2018).
+SELECT
+    SUM(COURSE.CREDITS)
+FROM
+    ENROLL,
+    CLASS,
+    COURSE,
+    STUDENT
+WHERE
+    ENROLL.REG_NO = 22004
+    AND STUDENT.REG_NO = ENROLL.REG_NO
+    AND ENROLL.CLS_CODE = CLASS.CLS_CODE
+    AND CLASS.CRS_CODE = COURSE.CRS_CODE
+    AND CLASS.SEM_CODE = 'WIN18'
+GROUP BY
+    STUDENT.REG_NO;
