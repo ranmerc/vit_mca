@@ -13,3 +13,7 @@
 5. [Number data type showing up as # in SQL Plus](https://stackoverflow.com/a/20150218/10469084)
 
 6. [Select Multiple Values From Single Column](https://stackoverflow.com/questions/14423188/select-multiple-values-from-single-column)
+
+7. [why using LIKE with TIMESTAMPS do not work in DB2](https://stackoverflow.com/questions/10009553/why-using-like-with-timestamps-do-not-work-in-db2)
+
+8. [How to insert a value that contains an apostrophe (single quote)?](https://stackoverflow.com/questions/1912095/how-to-insert-a-value-that-contains-an-apostrophe-single-quote)
