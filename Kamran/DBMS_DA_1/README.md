@@ -17,3 +17,5 @@
 7. [why using LIKE with TIMESTAMPS do not work in DB2](https://stackoverflow.com/questions/10009553/why-using-like-with-timestamps-do-not-work-in-db2)
 
 8. [How to insert a value that contains an apostrophe (single quote)?](https://stackoverflow.com/questions/1912095/how-to-insert-a-value-that-contains-an-apostrophe-single-quote)
+
+9. [How to update Oracle Timestamp value from the current to a timestamp from the past](https://stackoverflow.com/a/17411246/10469084)

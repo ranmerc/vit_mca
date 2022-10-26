@@ -465,4 +465,15 @@ WHERE
         WHERE
             CLASS.SEM_CODE = 'WIN18'
             AND CLASS.CRS_CODE = COURSE.CRS_CODE
-    )
+    );
+
+-- 3. (xxvi) Write necessary SQL statement to advance the
+-- start time and end time of every class by ten minutes
+-- in Fall 18–19 (Fall 2017)
+
+UPDATE CLASS
+SET
+    STIME = STIME + INTERVAL '10' MINUTE,
+    ETIME = ETIME + INTERVAL '10' MINUTE
+WHERE
+    SEM_CODE = 'FALL17'
