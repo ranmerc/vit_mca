@@ -1,0 +1,54 @@
+SELECT
+    *
+FROM
+    PROFESSOR_DEPARTMENT;
+
+SELECT
+    *
+FROM
+    PROGRAMME;
+
+SELECT
+    *
+FROM
+    STUDENT_VISA;
+
+SELECT
+    *
+FROM
+    ENROLL;
+
+SELECT
+    *
+FROM
+    STUDENT;
+
+SELECT
+    *
+FROM
+    CLASS;
+
+SELECT
+    *
+FROM
+    SEMESTER;
+
+SELECT
+    *
+FROM
+    COURSE;
+
+SELECT
+    *
+FROM
+    DEPARTMENT;
+
+SELECT
+    *
+FROM
+    SCHOOL;
+
+SELECT
+    *
+FROM
+    PROFESSOR;
