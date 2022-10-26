@@ -61,6 +61,14 @@ INSERT INTO PROFESSOR VALUES(
     'Computer Science'
 );
 
+INSERT INTO PROFESSOR VALUES(
+    'PR006',
+    'O''Brien',
+    'obrien@email.com',
+    6782392334,
+    'Lobotomy'
+);
+
 --- SCHOOL ---
 INSERT INTO SCHOOL VALUES(
     'SCH001',
@@ -94,6 +102,12 @@ INSERT INTO DEPARTMENT VALUES(
     'DEPT002',
     'NETWORKS',
     'SCH002'
+);
+
+INSERT INTO DEPARTMENT VALUES(
+    'DEPT003',
+    'BURN',
+    'SCH003'
 );
 
 --- STUDENT ---
@@ -131,6 +145,17 @@ INSERT INTO STUDENT VALUES(
     2359108490,
     'DEPT002',
     'PR002'
+);
+
+INSERT INTO STUDENT VALUES(
+    '22004',
+    'Mike Hunt',
+    'Vidhigaon, Bhopal, Madhya Pradesh',
+    '04-FEB-1998',
+    'mike@email.com',
+    2345345829,
+    'DEPT003',
+    'PR004'
 );
 
 --- STUDENT_VISA ---
@@ -216,8 +241,15 @@ INSERT INTO SEMESTER VALUES(
     '20-SEP-2016'
 );
 
---- CLASS ---
+INSERT INTO SEMESTER VALUES(
+    'WIN18',
+    'Winter',
+    2018,
+    '01-NOV-2017',
+    '01-MAR-2018'
+);
 
+--- CLASS ---
 -- 1. (ii) Use timestamp data type without
 -- fractional parts of seconds for start
 -- time and end time column of
@@ -284,6 +316,18 @@ INSERT INTO CLASS VALUES(
     'Saturday'
 );
 
+INSERT INTO CLASS VALUES(
+    'CLS006',
+    'E2/A1',
+    '13:00:00',
+    '14:00:00',
+    'DBMS',
+    'PR006',
+    124,
+    'WIN18',
+    'Tuesday'
+);
+
 --- ENROLL ---
 INSERT INTO ENROLL VALUES(
     'CLS001',
@@ -318,4 +362,11 @@ INSERT INTO ENROLL VALUES(
     '22003',
     '06:00:00',
     'A'
+);
+
+INSERT INTO ENROLL VALUES(
+    'CLS006',
+    '22004',
+    '12:00:37',
+    'B'
 );
