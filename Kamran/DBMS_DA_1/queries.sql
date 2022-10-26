@@ -430,3 +430,21 @@ WHERE
     AND CLASS.SEM_CODE = 'WIN18'
 GROUP BY
     STUDENT.REG_NO;
+
+-- 3. (xxiv) Given the registration number of a student,
+-- display her/his grade in the course she/he registered
+-- in Fall 17-18 (Fall 2017).
+SELECT
+    COURSE.CRS_NAME,
+    ENROLL.GRADE
+FROM
+    ENROLL,
+    COURSE,
+    STUDENT,
+    CLASS
+WHERE
+    ENROLL.REG_NO = STUDENT.REG_NO
+    AND STUDENT.REG_NO = '22002'
+    AND ENROLL.CLS_CODE = CLASS.CLS_CODE
+    AND CLASS.CRS_CODE = COURSE.CRS_CODE
+    AND CLASS.SEM_CODE = 'FALL17';
