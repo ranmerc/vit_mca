@@ -387,3 +387,27 @@ GROUP BY
     SCHOOL.SCL_NAME
 HAVING
     COUNT(STUDENT.REG_NO) > 7000;
+
+-- 3. (xxii) List the name of the department(s) under
+-- school of medicine with student strength higher than the
+-- average students of all the departments in the school.
+SELECT
+    DEPARTMENT.DNAME
+FROM
+    DEPARTMENT,
+    SCHOOL,
+    STUDENT
+WHERE
+    STUDENT.DEPT_ID = DEPARTMENT.DEPT_ID
+    AND DEPARTMENT.SCODE = SCHOOL.SCODE
+    AND SCHOOL.SCL_NAME = 'School of Medicine'
+GROUP BY
+    DEPARTMENT.DNAME
+HAVING
+    COUNT(STUDENT.REG_NO) > (
+        SELECT
+            COUNT(DISTINCT STUDENT.REG_NO) / COUNT(DISTINCT DEPARTMENT.DEPT_ID)
+        FROM
+            STUDENT,
+            DEPARTMENT
+    );
