@@ -569,3 +569,15 @@ SET
     DURATION = EXTRACT(
         HOUR FROM ETIME - STIME
     );
+
+-- 3. (xxxii) Add a column named
+-- 'SemesterDuration' (indicating duration
+-- of a semester) with appropriate data type
+-- to the SEMESTER table and populate the
+-- column from values of start date and end
+-- date columns.
+ALTER TABLE SEMESTER ADD SEMESTERDURATION NUMBER;
+
+UPDATE SEMESTER
+SET
+    SEMESTERDURATION = EDATE - SDATE;
