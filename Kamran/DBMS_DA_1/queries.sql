@@ -555,7 +555,7 @@ WHERE
     ENROLL.REG_NO = STUDENT.REG_NO
     AND CLASS.CLS_CODE = ENROLL.CLS_CODE
     AND CLASS.DAY_OF_WEEK = 'Tuesday'
-    AND CLASS.STIME >= '01-OCT-2022 12:00:00';
+    AND EXTRACT(HOUR FROM CLASS.STIME) >= 12;
 
 -- 3. (xxxi) Add a column named ‘Duration’
 -- (to indicate duration of a class) with
