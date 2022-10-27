@@ -556,3 +556,16 @@ WHERE
     AND CLASS.CLS_CODE = ENROLL.CLS_CODE
     AND CLASS.DAY_OF_WEEK = 'Tuesday'
     AND CLASS.STIME >= '01-OCT-2022 12:00:00';
+
+-- 3. (xxxi) Add a column named ‘Duration’
+-- (to indicate duration of a class) with
+-- appropriate data type to the CLASS
+-- table and populate the column from values
+-- of start time and end time columns.
+ALTER TABLE CLASS ADD DURATION NUMBER;
+
+UPDATE CLASS
+SET
+    DURATION = EXTRACT(
+        HOUR FROM ETIME - STIME
+    );
