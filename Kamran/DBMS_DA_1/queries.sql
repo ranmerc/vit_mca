@@ -541,3 +541,18 @@ WHERE
             ENROLL.CLS_CODE = CLASS.CLS_CODE
             AND ENROLL.REG_NO = '22003'
     );
+
+-- 3. (xxx) Find out the name list of students
+-- who have classes in the afternoon session
+-- only on a specific day of the week.
+SELECT
+    STUDENT.SNAME
+FROM
+    STUDENT,
+    ENROLL,
+    CLASS
+WHERE
+    ENROLL.REG_NO = STUDENT.REG_NO
+    AND CLASS.CLS_CODE = ENROLL.CLS_CODE
+    AND CLASS.DAY_OF_WEEK = 'Tuesday'
+    AND CLASS.STIME >= '01-OCT-2022 12:00:00';
