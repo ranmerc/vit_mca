@@ -411,3 +411,12 @@ INSERT INTO ENROLL VALUES(
 );
 
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "HH24:MI:SS";
+
+--- PROGRAMME ---
+INSERT INTO PROGRAMME VALUES(
+    'MCA',
+    'Masters of Computer Application',
+    'We are Masters of Computer Application',
+    'SCH002',
+    'DEPT002'
+);
