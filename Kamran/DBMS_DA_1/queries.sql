@@ -476,4 +476,68 @@ SET
     STIME = STIME + INTERVAL '10' MINUTE,
     ETIME = ETIME + INTERVAL '10' MINUTE
 WHERE
-    SEM_CODE = 'FALL17'
+    SEM_CODE = 'FALL17';
+
+-- 3. (xxvii) Write necessary SQL statement
+-- to advance the start date and end date of
+-- Fall 18-19 semester by one week with
+-- respect to Fall semester of 17-18(Fall 2017)
+UPDATE CLASS
+SET
+    STIME = STIME + INTERVAL '7' DAY,
+    ETIME = ETIME + INTERVAL '7' DAY
+WHERE
+    SEM_CODE = 'FALL18';
+
+-- 3. (xxviii) Find out the name list of
+-- students who had secured ‘S’ grade in
+-- at least 50% of the courses cleared by
+-- her/him.
+SELECT
+    STUDENT.SNAME
+FROM
+    STUDENT,
+    ENROLL
+WHERE
+    STUDENT.REG_NO = ENROLL.REG_NO
+    AND ENROLL.GRADE = 'S'
+GROUP BY
+    STUDENT.SNAME
+HAVING
+    COUNT(GRADE) >= 0.5 * (
+        SELECT
+            COUNT(GRADE)
+        FROM
+            STUDENT,
+            ENROLL
+        WHERE
+            STUDENT.REG_NO = ENROLL.REG_NO
+            AND ENROLL.GRADE IN ('S',
+            'A',
+            'B',
+            'C',
+            'D',
+            'E')
+        GROUP BY
+            GRADE
+    );
+
+-- 3. (xxix) Given the registration number
+-- of a student, find out his/her free slots.
+SELECT
+    CLASS.SLOT
+FROM
+    ENROLL,
+    CLASS
+WHERE
+    ENROLL.CLS_CODE = CLASS.CLS_CODE
+    AND CLASS.SLOT NOT IN (
+        SELECT
+            CLASS.SLOT
+        FROM
+            ENROLL,
+            CLASS
+        WHERE
+            ENROLL.CLS_CODE = CLASS.CLS_CODE
+            AND ENROLL.REG_NO = '22003'
+    );
