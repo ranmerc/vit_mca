@@ -596,10 +596,75 @@ WHERE
 -- 3. (xxxiv) Display the name of programs and the
 -- name of school offering the program
 SELECT
-    PROGRAMME.PROG_NAME, SCHOOL.SCODE
+    PROGRAMME.PROG_NAME,
+    SCHOOL.SCODE
 FROM
     PROGRAMME,
     SCHOOL
 WHERE
     PROGRAMME.SCODE = SCHOOL.SCODE;
 
+-- 3. (xxxv) Display the name of the departments and
+-- the name of the program controlled by the department.
+SELECT
+    PROGRAMME.PROG_NAME,
+    DEPARTMENT.DNAME
+FROM
+    PROGRAMME,
+    DEPARTMENT
+WHERE
+    PROGRAMME.DEPT_ID = DEPARTMENT.DEPT_ID;
+
+-- 4. (i) Test the string manipulation functions –
+-- UPPER, LOWER, INITCAP, LENGTH, LPAD, RPAD, LTRIM,
+-- RTRIM and TRIM, using select queries on data
+-- present in the tables. Use one query each for
+-- demonstration of one function.
+SELECT
+    UPPER(STUDENT.SNAME)
+FROM
+    STUDENT;
+
+SELECT
+    LOWER(STUDENT.SNAME)
+FROM
+    STUDENT;
+
+SELECT
+    INITCAP(STUDENT.SNAME)
+FROM
+    STUDENT;
+
+SELECT
+    LENGTH(STUDENT.SNAME)
+FROM
+    STUDENT;
+
+SELECT
+    LPAD(STUDENT.SNAME,
+    15,
+    '@')
+FROM
+    STUDENT;
+
+SELECT
+    RPAD(STUDENT.SNAME,
+    15,
+    '@')
+FROM
+    STUDENT;
+
+SELECT
+    LTRIM('   hello')
+FROM
+    DUAL;
+
+SELECT
+    LTRIM('hello   ')
+FROM
+    DUAL;
+
+SELECT
+    TRIM('   hello    ')
+FROM
+    DUAL;
