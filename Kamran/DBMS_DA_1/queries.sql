@@ -704,7 +704,7 @@ FROM
 WHERE
     EXTRACT(MONTH FROM DOB) = 2;
 
--- 4. (iv) Display the name of the students with a 
+-- 4. (iv) Display the name of the students with a
 -- specified date of birth.
 SELECT
     SNAME
@@ -712,3 +712,11 @@ FROM
     STUDENT
 WHERE
     DOB = '04-FEB-1998';
+
+-- 4. (v) Display the date of birth of a specified
+-- student in the format 'Day of week, Month dd, yyyy'
+SELECT
+    TO_CHAR(DOB,
+    'W DD/MM/YYYY')
+FROM
+    STUDENT;

@@ -19,3 +19,5 @@
 8. [How to insert a value that contains an apostrophe (single quote)?](https://stackoverflow.com/questions/1912095/how-to-insert-a-value-that-contains-an-apostrophe-single-quote)
 
 9. [How to update Oracle Timestamp value from the current to a timestamp from the past](https://stackoverflow.com/a/17411246/10469084)
+
+10. [How to extract week number in sql](https://stackoverflow.com/a/16530174/10469084)
