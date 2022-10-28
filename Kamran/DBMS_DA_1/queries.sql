@@ -591,4 +591,15 @@ FROM
     PROGRAMME
 WHERE
     STUDENT.DEPT_ID = PROGRAMME.DEPT_ID
-    AND PROGRAMME.PROG_CODE = 'MCA';`
+    AND PROGRAMME.PROG_CODE = 'MCA';
+
+-- 3. (xxxiv) Display the name of programs and the
+-- name of school offering the program
+SELECT
+    PROGRAMME.PROG_NAME, SCHOOL.SCODE
+FROM
+    PROGRAMME,
+    SCHOOL
+WHERE
+    PROGRAMME.SCODE = SCHOOL.SCODE;
+
