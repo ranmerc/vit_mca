@@ -720,3 +720,17 @@ SELECT
     'W DD/MM/YYYY')
 FROM
     STUDENT;
+
+-- 4. (vi) Display the hour and minutes of the
+-- start time and end time of a specified slot.
+SELECT
+    TO_CHAR(STIME,
+    'HH:MI'),
+    TO_CHAR(ETIME,
+    'HH:MI')
+FROM
+    CLASS
+WHERE
+    SLOT = 'T1/A1';
+
+ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "HH24:MI:SS";
