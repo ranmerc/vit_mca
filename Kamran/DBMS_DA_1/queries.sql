@@ -668,3 +668,39 @@ SELECT
     TRIM('   hello    ')
 FROM
     DUAL;
+
+-- 4. (ii) Write query to illustrate usage of NVL
+-- function and NULLIF function.
+SELECT
+    NVL('Not a null',
+    'Some Value')
+FROM
+    DUAL;
+
+SELECT
+    NVL(NULL,
+    'Some Value')
+FROM
+    DUAL;
+
+SELECT
+    NULLIF(5,
+    4)
+FROM
+    DUAL;
+
+SELECT
+    NULLIF(4,
+    4)
+FROM
+    DUAL;
+
+-- 4. (iii) Display the name of the students who
+-- were born on a specified month.
+SELECT
+    SNAME
+FROM
+    STUDENT
+WHERE
+    EXTRACT(MONTH FROM DOB) = 2;
+
