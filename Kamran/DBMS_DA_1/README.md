@@ -21,3 +21,5 @@
 9. [How to update Oracle Timestamp value from the current to a timestamp from the past](https://stackoverflow.com/a/17411246/10469084)
 
 10. [How to extract week number in sql](https://stackoverflow.com/a/16530174/10469084)
+
+11. [SQL Sequences](https://www.geeksforgeeks.org/sql-sequences/)

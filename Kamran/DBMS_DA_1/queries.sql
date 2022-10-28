@@ -755,3 +755,39 @@ FROM
     SEMESTER
 WHERE
     SEM_CODE = 'WIN18';
+
+-- 5. Create a sequence that starts with 1000 and
+-- is incremented by 1. Use this sequence in the
+-- following table for entering information about
+-- at least three customers.
+-- CUSTOMER(Cus_code, Cus_name, Cus_address, Cus_mobile)
+CREATE SEQUENCE CODE_SEQUENCE START WITH 1000 INCREMENT BY 1;
+
+CREATE TABLE CUSTOMER(
+    CUS_CODE NUMBER,
+    CUS_NAME VARCHAR(50),
+    CUS_ADDRESS VARCHAR(100),
+    CUS_MOBILE NUMBER,
+    CONSTRAINT CUSTOMER_PK PRIMARY KEY(CUS_CODE)
+);
+
+INSERT INTO CUSTOMER VALUES(
+    CODE_SEQUENCE.NEXTVAL,
+    'CUS001',
+    'ADDR001',
+    12345
+);
+
+INSERT INTO CUSTOMER VALUES(
+    CODE_SEQUENCE.NEXTVAL,
+    'CUS002',
+    'ADDR002',
+    67894
+);
+
+INSERT INTO CUSTOMER VALUES(
+    CODE_SEQUENCE.NEXTVAL,
+    'CUS003',
+    'ADDR003',
+    75894
+);

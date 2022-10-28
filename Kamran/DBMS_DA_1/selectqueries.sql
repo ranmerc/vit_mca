@@ -52,3 +52,8 @@ SELECT
     *
 FROM
     PROFESSOR;
+
+SELECT
+    *
+FROM
+    CUSTOMER;
