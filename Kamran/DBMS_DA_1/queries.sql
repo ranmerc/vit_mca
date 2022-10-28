@@ -704,3 +704,11 @@ FROM
 WHERE
     EXTRACT(MONTH FROM DOB) = 2;
 
+-- 4. (iv) Display the name of the students with a 
+-- specified date of birth.
+SELECT
+    SNAME
+FROM
+    STUDENT
+WHERE
+    DOB = '04-FEB-1998';
