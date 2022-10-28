@@ -723,6 +723,7 @@ FROM
 
 -- 4. (vi) Display the hour and minutes of the
 -- start time and end time of a specified slot.
+
 SELECT
     TO_CHAR(STIME,
     'HH:MI'),
@@ -733,4 +734,15 @@ FROM
 WHERE
     SLOT = 'T1/A1';
 
-ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "HH24:MI:SS";
+-- 4. (vii) Display the day of week of the start
+-- date and end date of Winter semester 17–18
+-- (Winter 2018).
+SELECT
+    TO_CHAR(SDATE,
+    'W'),
+    TO_CHAR(EDATE,
+    'W')
+FROM
+    SEMESTER
+WHERE
+    SEM_CODE = 'WIN18';
