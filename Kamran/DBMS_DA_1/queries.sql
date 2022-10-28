@@ -746,3 +746,12 @@ FROM
     SEMESTER
 WHERE
     SEM_CODE = 'WIN18';
+
+-- 4. (viii) Display the duration of Winter semester
+-- 17-18 (Winter 2018) in terms of number of weeks
+SELECT
+    TRUNC(TO_NUMBER(EDATE - SDATE) / 7)
+FROM
+    SEMESTER
+WHERE
+    SEM_CODE = 'WIN18';
