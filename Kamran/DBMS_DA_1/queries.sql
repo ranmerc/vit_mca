@@ -48,7 +48,7 @@ FROM
     STUDENT
 WHERE
     ADDRESS LIKE '%Katpadi%'
-    AND SNAME LIKE '%l%';
+    AND SNAME LIKE '__l%';
 
 -- 3. (ii) Display name, email address and
 -- address for those students who are not
