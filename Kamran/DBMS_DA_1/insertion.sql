@@ -1,4 +1,4 @@
-DELETE FROM PROFESSOR_DEPARTMENT;
+-- DELETE FROM PROFESSOR_DEPARTMENT;
 
 DELETE FROM PROGRAMME;
 
@@ -23,50 +23,56 @@ DELETE FROM PROFESSOR;
 --- PROFESSOR ---
 INSERT INTO PROFESSOR VALUES(
     'PR001',
-    'PROFESSOR_1',
-    'prof_1@email.com',
-    2228332282,
-    'Statistical Methods'
+    'ABHISHEK DAS',
+    'abhi_d@email.com',
+    9456128722,
+    'Statistical Methods',
+    'DEPT001'
 );
 
 INSERT INTO PROFESSOR VALUES(
     'PR002',
-    'PROFESSOR_2',
-    'prof_2@email.com',
-    2345187509,
-    'Magnet Networks'
+    'ANBARASA KUMAR',
+    'anb_ku@email.com',
+    7098529327,
+    'Data Communication',
+    'DEPT002'
 );
 
 INSERT INTO PROFESSOR VALUES(
     'PR003',
-    'PROFESSOR_3',
-    'prof_3@email.com',
-    1321115090,
-    'Neurosurgery'
+    'RAJIV S',
+    'rajiv_s@email.com',
+    8878239271,
+    'Cardiology',
+    'DEPT003'
 );
 
 INSERT INTO PROFESSOR VALUES(
     'PR004',
-    'PROFESSOR_4',
-    'prof_4@email.com',
-    1245120566,
-    'Oncology'
+    'SENTIL KUMAR',
+    'sentilk@email.com',
+    8592385792,
+    'Neurology',
+    'DEPT003'
 );
 
 INSERT INTO PROFESSOR VALUES(
     'PR005',
-    'PROFESSOR_5',
-    'prof_5@email.com',
-    2353415125,
-    'Computer Science'
+    'VINAY M',
+    'vinaym@email.com',
+    8752938592,
+    'DBMS',
+    'DEPT002'
 );
 
 INSERT INTO PROFESSOR VALUES(
     'PR006',
-    'O''Brien',
-    'obrien@email.com',
-    6782392334,
-    'Lobotomy'
+    'NEELU KHARE',
+    'neeluk@email.com',
+    9838278265,
+    'Lobotomy',
+    'DEPT003'
 );
 
 --- SCHOOL ---
@@ -95,66 +101,69 @@ INSERT INTO SCHOOL VALUES(
 INSERT INTO DEPARTMENT VALUES(
     'DEPT001',
     'STATISTICS',
-    'SCH001'
+    'SCH001',
+    'PR001'
 );
 
 INSERT INTO DEPARTMENT VALUES(
     'DEPT002',
     'NETWORKS',
-    'SCH002'
+    'SCH002',
+    'PR002'
 );
 
 INSERT INTO DEPARTMENT VALUES(
     'DEPT003',
-    'BURN',
-    'SCH003'
+    'PHYSIOLOGY',
+    'SCH003',
+    'PR003'
 );
 
 --- PROFESSOR_DEPARTMENT ---
-INSERT INTO PROFESSOR_DEPARTMENT VALUES(
-    'PR001',
-    'DEPT001',
-    'T'
-);
+-- INSERT INTO PROFESSOR_DEPARTMENT VALUES(
+--     'PR001',
+--     'DEPT001',
+--     'T'
+-- );
 
-INSERT INTO PROFESSOR_DEPARTMENT VALUES(
-    'PR002',
-    'DEPT002',
-    'T'
-);
+-- INSERT INTO PROFESSOR_DEPARTMENT VALUES(
+--     'PR002',
+--     'DEPT002',
+--     'T'
+-- );
 
-INSERT INTO PROFESSOR_DEPARTMENT VALUES(
-    'PR003',
-    'DEPT003',
-    'T'
-);
+-- INSERT INTO PROFESSOR_DEPARTMENT VALUES(
+--     'PR003',
+--     'DEPT003',
+--     'T'
+-- );
 
-INSERT INTO PROFESSOR_DEPARTMENT VALUES(
-    'PR005',
-    'DEPT001',
-    'F'
-);
+-- INSERT INTO PROFESSOR_DEPARTMENT VALUES(
+--     'PR005',
+--     'DEPT001',
+--     'F'
+-- );
 
-INSERT INTO PROFESSOR_DEPARTMENT VALUES(
-    'PR006',
-    'DEPT003',
-    'F'
-);
+-- INSERT INTO PROFESSOR_DEPARTMENT VALUES(
+--     'PR006',
+--     'DEPT003',
+--     'F'
+-- );
 
-INSERT INTO PROFESSOR_DEPARTMENT VALUES(
-    'PR004',
-    'DEPT002',
-    'F'
-);
+-- INSERT INTO PROFESSOR_DEPARTMENT VALUES(
+--     'PR004',
+--     'DEPT002',
+--     'F'
+-- );
 
 --- STUDENT ---
 -- 1.
 INSERT INTO STUDENT VALUES(
-    '22001',
-    'Sulaj Kepir',
+    '22MCA0233',
+    'Bhooshan Birje',
     'VIT University, Katpadi, Vellore, Tamil Nadu',
     '24-DEC-2001',
-    'sulaj@email.com',
+    'bhooshanb@email.com',
     9988776655,
     'DEPT001',
     'PR001'
@@ -162,19 +171,19 @@ INSERT INTO STUDENT VALUES(
 
 -- 2.
 INSERT INTO STUDENT VALUES(
-    '22002',
-    'Sukon Deese',
-    'Sukhi Nagar, Kanpur, Uttar Pradesh',
-    '02-FEB-1999',
-    'sukon@email.com',
-    4628967566,
+    '22MCA0223',
+    'Kamran Ansari',
+    'Prabhat road, Pune',
+    '06-JUL-2000',
+    'ranmerc@email.com',
+    8547492385,
     'DEPT001',
     'PR001'
 );
 
 -- 3.
 INSERT INTO STUDENT VALUES(
-    '22003',
+    '22MCA018',
     'Timon Zwanpa',
     'Astit Colony, Johanes, Zambia',
     '31-JAN-2001',
@@ -185,7 +194,7 @@ INSERT INTO STUDENT VALUES(
 );
 
 INSERT INTO STUDENT VALUES(
-    '22004',
+    '22MCA045',
     'Mike Hunt',
     'Vidhigaon, Bhopal, Madhya Pradesh',
     '04-FEB-1998',
@@ -195,41 +204,52 @@ INSERT INTO STUDENT VALUES(
     'PR004'
 );
 
+INSERT INTO STUDENT VALUES(
+    '22MCA0455',
+    'Kalpana Chawla',
+    'Astit Colony, Katpadi, Tamil Nadu',
+    '31-JUL-2001',
+    'kalpana@email.com',
+    8779273901,
+    'DEPT003',
+    'PR002'
+);
+
 --- STUDENT_VISA ---
 -- 3.
 INSERT INTO STUDENT_VISA VALUES(
-    '22003',
+    '22MCA018',
     'ACCEPTED'
 );
 
 --- COURSE ---
 -- 4.
 INSERT INTO COURSE VALUES(
-    'CRS002',
-    'COURSE_2',
-    'THIS IS THE COURSE 2',
+    'CRS001',
+    'Networking',
+    'Computer Networks',
     4,
     60
 );
 
 INSERT INTO COURSE VALUES(
-    'CRS003',
-    'COURSE_3',
-    'THIS IS THE COURSE 3',
+    'CRS002',
+    'OOSE',
+    'Object Oriented Software Engineering',
     5,
     150
 );
 
 INSERT INTO COURSE VALUES(
-    'CRS001',
-    'COURSE_1',
-    'THIS IS THE COURSE 1',
+    'CRS003',
+    'ML',
+    'Machine learning for beginners',
     2,
     40
 );
 
 INSERT INTO COURSE VALUES(
-    'DBMS',
+    'CRS004',
     'Database Systems',
     'This is database systems',
     8,
@@ -237,7 +257,7 @@ INSERT INTO COURSE VALUES(
 );
 
 INSERT INTO COURSE VALUES(
-    'OS',
+    'CRS005',
     'Operating Systems',
     'This is operating systems',
     10,
@@ -334,7 +354,7 @@ INSERT INTO CLASS VALUES(
     'B1/A1',
     '12:00:00',
     '14:00:00',
-    'DBMS',
+    'CRS004',
     'PR005',
     113,
     'FALL16',
@@ -346,7 +366,7 @@ INSERT INTO CLASS VALUES(
     'F2/G1',
     '17:00:00',
     '19:00:00',
-    'OS',
+    'CRS005',
     'PR005',
     120,
     'FALL16',
@@ -358,7 +378,7 @@ INSERT INTO CLASS VALUES(
     'E2/A1',
     '13:00:00',
     '14:00:00',
-    'DBMS',
+    'CRS004',
     'PR006',
     124,
     'WIN18',
@@ -370,42 +390,42 @@ ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "DD-MM-YY HH24:MI:SS";
 
 INSERT INTO ENROLL VALUES(
     'CLS001',
-    '22002',
+    '22MCA0233',
     '02-05-2019 10:31:50',
     'C'
 );
 
 INSERT INTO ENROLL VALUES(
     'CLS002',
-    '22001',
+    '22MCA0223',
     '20-05-2022 14:31:25',
     'A'
 );
 
 INSERT INTO ENROLL VALUES(
     'CLS003',
-    '22002',
+    '22MCA018',
     '21-07-2021 06:35:00',
     'D'
 );
 
 INSERT INTO ENROLL VALUES(
     'CLS004',
-    '22003',
+    '22MCA045',
     '17-11-2017 07:35:00',
     'F'
 );
 
 INSERT INTO ENROLL VALUES(
     'CLS005',
-    '22003',
+    '22MCA0233',
     '19-12-2020 06:00:00',
     'A'
 );
 
 INSERT INTO ENROLL VALUES(
     'CLS006',
-    '22004',
+    '22MCA018',
     '20-06-2017 12:00:37',
     'B'
 );
@@ -416,7 +436,17 @@ ALTER SESSION SET NLS_TIMESTAMP_FORMAT = "HH24:MI:SS";
 INSERT INTO PROGRAMME VALUES(
     'MCA',
     'Masters of Computer Application',
-    'We are Masters of Computer Application',
+    'Strive For Excellency',
     'SCH002',
     'DEPT002'
 );
+
+INSERT INTO PROGRAMME VALUES(
+    'MBS',
+    'Master of Business Statistics',
+    'Accuracy above all',
+    'SCH001',
+    'DEPT001'
+);
+
+commit;
