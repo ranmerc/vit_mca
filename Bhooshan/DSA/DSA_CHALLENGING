@@ -1,0 +1,826 @@
+1.
+#include <iostream>
+#define m 3
+#define n m*3
+
+using namespace std;
+
+int stack[n];
+int t[3] = {-1,m-1,2*m-1};
+int limits[3] = {m,2*m,3*m};
+int start[3] = {0,m,2*m};
+
+
+void push(int sno, int val) {
+	if(t[sno] >= limits[sno]-1)
+		cout<<"Stack Overflow"<<endl;
+	else {
+		t[sno]++;
+		stack[t[sno]]=val;
+	}
+}
+
+void pop(int sno) {
+	if(t[sno] < start[sno])
+		cout<<"Stack Underflow"<<endl;
+	else {
+		cout<<"The popped element is "<< stack[t[sno]] <<endl;
+		stack[t[sno]] = 0;
+		t[sno]--;
+	}
+}
+
+void display() {
+		cout<<"Stack elements are:";
+		for(int i=n-1; i>=0; i--)
+			cout<<stack[i]<<" ";
+		cout<<endl;
+}
+
+int main() {
+	int ch, val,sno;
+	cout<<"1) Push in stack"<<endl;
+	cout<<"2) Pop from stack"<<endl;
+	cout<<"3) Display stack"<<endl;
+	cout<<"4) Exit"<<endl;
+	do {
+		cout<<"Enter choice: "<<endl;
+		cin>>ch;
+		switch(ch) {
+			case 1: {
+				cout<<"Enter value to be pushed:"<<endl;
+				cin>>val;
+				cout<<"Enter stack no:"<<endl;
+				cin>>sno;
+				if(sno > n/m){
+					printf("Invalid stack number\n");
+					break;
+				}
+				push(sno-1,val);
+				break;
+			}
+			case 2: {
+				cout<<"Enter stack no:"<<endl;
+				cin>>sno;
+				if(sno > n/m){
+					printf("Invalid stack number\n");
+					break;
+				}
+				pop(sno-1);
+				break;
+			}
+			case 3: {
+				display();
+				break;
+			}
+			case 4: {
+				cout<<"Exit"<<endl;
+				break;
+			}
+			default: {
+				cout<<"Invalid Choice"<<endl;
+			}
+		}
+	}while(ch!=4);
+	return 0;
+}
+
+
+2.
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+
+vector<string>st;
+int top = -1;
+
+void push(string reg){
+	top++;
+	st.push_back(reg);
+}
+
+void pop(){
+	--top;
+}
+
+string peek(){
+	return st[top];
+}
+
+int main(){
+	int ch = 1;
+	string reg;
+	while(ch){
+		cout<<"Enter registration number : "<<endl;
+		cin>>reg;
+		push(reg);
+		cout<<"Enter 1 to add registration number and 0 to quit"<<endl;
+		cin>>ch;
+	}
+
+	cout<<"Total entries : "<<top<<endl;
+
+	while(top > 9)pop();
+
+	cout<<"First ten registration numbers to submit the assignment : "<<endl;
+	while(top >= 0){
+		cout<<peek()<<endl;
+		pop();
+	}
+
+	return 0;
+}
+
+3.
+//Incomplete code
+#include<iostream>
+#include<string>
+#include<vector>
+
+using namespace std;
+
+
+string curr_web;
+
+vector<string>stF;
+int topF = -1;
+vector<string>stB;
+int topB = -1;
+int curr = 0;
+
+void movenext(){
+	if(topF == curr-1){
+	cout<<"Currently, no webpages ahead."<<endl;
+	cout<<"Enter the name of the webpage you're searching for : "<<endl;
+	cin>>curr_web;
+	topB++;
+	stB.push_back(curr_web);
+	}
+}
+
+int main(){
+	int ch;
+	while(1){
+	cout<<"Enter 1 to display forward and backward stack.\nEnter 2 to move to next webpage"<<endl;
+	cout<<"Enter 3 to move to previous page\nEnter 4 to quit"<<endl;
+	cin>>ch;
+	switch(ch){
+		case 1 : display();break;
+		case 2 : movenext();break;
+		case 3 : moveprevious();break;
+		case 4 : return 0;
+		default : cout<<"Wrong choice !"<<endl; break;
+	}
+	}
+
+	return 0;
+}
+
+//Sir code
+#include<stdio.h> #include<stdlib.h> #define SIZE 100
+int forw[100],back[100],curr,ch,top1=-1,top2=-1; void push_forw() {
+if(top1+1>=SIZE) printf("\nOverflow\n");
+else
+{ top1++; forw[top1]=curr;
+} } void push_back() {
+if(top2+1>=SIZE)
+printf("\nOverflow\n"); else {
+top2++; back[top2]=curr;
+} } void pop_forw() {
+top1--;
+} void pop_back()
+{ back[top2]=curr;
+top2--; } int main() {
+printf("Enter your current element\n"); scanf("%d",&curr); flag: printf("Do you want to go forward or backward? F||f--forward    B||b-­
+backward\n E||e--exit"); scanf("%s",&ch); if(ch=='F' || ch=='f' || ch=='B' || ch=='b') { switch(ch) {
+case 'F':
+case 'f':printf("Enter your element\n"); push_back(); pop_forw(); scanf("%d",&curr); if(top1==-1)
+printf("Current=%d backward=%d\n",curr,back[top2]);
+else printf("Current=%d Back=%d Forward=%d\n",curr,back[top2],forw[top1]);
+goto flag; case 'B': case 'b':push_forw();
+pop_back();
+/*if(top2==-1) printf("Current=%d forward=%d\n",curr,forw[top1]); else*/ printf("Current=%d Back=%d
+Forward=%d\n",curr,back[top2],forw[top1]);
+goto flag; } } else exit(0);
+}
+
+
+4.
+//Sir Code
+A.
+#include <iostream>
+#include <stack>
+#include <locale>
+using namespace std;
+int preced(char ch)
+{
+	if (ch == '+' || ch == '-')
+	{
+		return 1;
+	}
+	else if (ch == '*' || ch == '/')
+	{
+		return 2;
+	}
+	else if (ch == '^')
+	{
+		return 3;
+	}
+	else
+	{
+		return 0;
+	}
+}
+string inToPost(string infix)
+{
+	stack<char> stk;
+	stk.push('#');
+	string postfix = "";
+
+	string::iterator it;
+	for (it = infix.begin(); it != infix.end(); it++)
+	{
+		if (isalnum(char(*it)))
+			postfix += *it;
+		else if (*it == '(')
+			stk.push('(');
+		else if (*it == '^')
+			stk.push('^');
+		else if (*it == ')')
+		{
+			while (stk.top() != '#' && stk.top() != '(')
+			{
+				postfix += stk.top();
+				stk.pop();
+			}
+			stk.pop();
+		}
+		else
+		{
+			if (preced(*it) > preced(stk.top()))
+				stk.push(*it);
+			else
+			{
+				while (stk.top() != '#' && preced(*it) <= preced(stk.top()))
+				{
+					postfix += stk.top();
+					stk.pop();
+				}
+				stk.push(*it);
+			}
+		}
+	}
+	while (stk.top() != '#')
+	{
+		postfix += stk.top();
+		stk.pop();
+	}
+	return postfix;
+}
+int main()
+{
+	string infix;
+	cout<<"Enter infix expression : "<<endl;
+	cin>>infix;
+	cout << "Postfix Form Is: " << inToPost(infix) << endl;
+}
+
+4.B.
+#include <iostream>
+#include <stack>
+#include <locale>
+#include <algorithm>
+using namespace std;
+int preced(char ch)
+{
+	if (ch == '+' || ch == '-')
+	{
+		return 1;
+	}
+	else if (ch == '*' || ch == '/')
+	{
+		return 2;
+	}
+	else if (ch == '^')
+	{
+		return 3;
+	}
+	else
+	{
+		return 0;
+	}
+}
+string inToPost(string infix)
+{
+	stack<char> stk;
+	stk.push('#');
+	string postfix = "";
+
+	string::iterator it;
+	for (it = infix.begin(); it != infix.end(); it++)
+	{
+		if (isalnum(char(*it)))
+			postfix += *it;
+		else if (*it == '(')
+			stk.push('(');
+		else if (*it == '^')
+			stk.push('^');
+		else if (*it == ')')
+		{
+			while (stk.top() != '#' && stk.top() != '(')
+			{
+				postfix += stk.top();
+				stk.pop();
+			}
+			stk.pop();
+		}
+		else
+		{
+			if (preced(*it) > preced(stk.top()))
+				stk.push(*it);
+			else
+			{
+				while (stk.top() != '#' && preced(*it) <= preced(stk.top()))
+				{
+					postfix += stk.top();
+					stk.pop();
+				}
+				stk.push(*it);
+			}
+		}
+	}
+	while (stk.top() != '#')
+	{
+		postfix += stk.top();
+		stk.pop();
+	}
+	return postfix;
+}
+string inToPre(string infix)
+{
+	string prefix;
+	reverse(infix.begin(), infix.end());
+	string::iterator it;
+	for (it = infix.begin(); it != infix.end(); it++)
+	{
+		if (*it == '(')
+			*it = ')';
+		else if (*it == ')')
+			*it = '(';
+	}
+	prefix = inToPost(infix);
+	reverse(prefix.begin(), prefix.end());
+	return prefix;
+}
+int main()
+{
+	string infix;
+	cout<<"Enter infix expression : "<<endl;
+	cin>>infix;
+	cout << "Prefix Form Is: " << inToPre(infix) << endl;
+}
+
+//My C code
+4.
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#define N 20
+
+char stack[N];
+int topp = -1;
+
+int precedence(char c){
+	if(c=='^') return 3;
+	else if(c=='/' || c=='*')return 2;
+	else if(c=='+'||c=='-')return 1;
+	else return -1;
+}
+
+void push(char c){
+	if(topp == N-1){
+		printf("Overflow");
+	}
+	else{
+		stack[++topp] = c;
+	}
+}
+
+char top(){
+	return stack[topp];
+}
+
+int isEmpty(){
+	if(topp == -1){
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+void pop(){
+	if(topp == -1){
+		printf("Underflow, Invalid expression");
+		exit(1);
+	}
+	else{
+		topp--;
+	}
+}
+
+void infixToPostfix(char infix[], char postfix[],int n){
+
+	for(int i = 0; i < n; i++){
+
+		if((infix[i] >= 'a' && infix[i] <= 'z') || (infix[i] >= 'A' && infix[i] <= 'Z'))
+			strncat(postfix,&infix[i],1);
+
+		else if(infix[i] =='('){
+			push('(');
+		}
+
+		else if(infix[i] == ')'){
+			while(!isEmpty() && top()!='('){
+				char c = top();
+				strncat(postfix,&c,1);
+				pop();
+			}
+			if(!isEmpty()){
+				pop(); //popping '('
+			}
+		}
+
+		else{
+			while(!isEmpty() && precedence(top())>=precedence(infix[i])){
+				char c = top();
+				strncat(postfix,&c,1);
+				pop();
+			}
+			push(infix[i]);
+		}
+	}
+
+	while(!isEmpty()){
+		char c = top();
+		strncat(postfix,&c,1);
+		pop();
+	}
+
+}
+
+void infixToPrefix(char infix[], char prefix[], int n){
+	strrev(infix);
+	for(int i = 0; i < n; i++){
+		if(infix[i] == ')')
+			infix[i] = '(';
+		else if (infix[i] == '(')
+			infix[i] = ')';
+	}
+	infixToPostfix(infix,prefix,n);
+	strrev(prefix);
+}
+
+int main(){
+	char infix[N],postfix[N] = "",prefix[N]="";
+	printf("Enter the infix expression : ");
+	gets(infix);
+	int n = strlen(infix);
+	infixToPostfix(infix,postfix,n);
+	printf("Postfix expression is : %s\n",postfix);
+	infixToPrefix(infix,prefix,n);
+	printf("Prefix expression is : %s\n",prefix);
+}
+
+
+
+5.
+#include<iostream>
+#define N 5
+
+using namespace std;
+
+int queue[N];
+int front = -1;
+int rear = -1;
+
+void insert(){
+	++rear;
+	if(rear >= N){
+		cout<<"Cannot add a member. Limit reached."<<endl;
+		return;
+	}
+	if(front == -1) front = 0;
+	queue[rear] = 1;
+	cout<<"New member added"<<endl;
+}
+
+void takeseat(){
+	while(--rear > -1){
+		cout<<"Member "<<front+1<<" taken seat."<<endl;
+		front++;
+	}
+	cout<<"Ride Started !\n";
+	front = -1;
+	rear = -1;
+}
+
+
+int main(){
+	int ch;
+	while(1){
+		cout<<"\nPress 1 to add a member\nPress 2 to start the ride\nPress 3 to Quit."<<endl;
+		cin>>ch;
+		if(ch == 2 && rear < N) cout<<"Ride cannot start without "<<N<<" members.\nCurrently, "<<rear+1<<" member/s. Add more members."<<endl;
+		else if(ch == 1)
+			insert();
+		else if(ch == 3) return 0;
+		else takeseat();
+	}
+	return 0;
+}
+
+6.
+#include<iostream>
+using namespace std;
+#define MAX 40
+
+int rear=-1;
+int front=-1;
+char q[MAX];
+char b[30];
+char at[]={"VIT UNIVERSITY"};
+int i=0,j=0;
+
+int isempty()
+{
+if(front==-1)
+{
+return 1;
+}
+else
+{
+	return 0;
+}
+}
+
+int isfull()
+{
+if((rear+1)%10==front)
+{
+return 1;
+}
+else
+{
+	return 0;
+}
+}
+
+void write()
+{
+if (isfull())
+{
+	cout<<"Full";
+}
+else
+{
+	if(front==-1)
+	{
+		front=0;
+	}
+rear=(rear+1)%10;
+q[rear]=at[i++];
+}
+}
+void dispd()
+{
+	int j;
+	cout<<"Output\n";
+	for(j=0;j<20;j++)
+	{
+		cout<<b[j];
+	}
+	cout<<"\n";
+};
+void read()
+{
+	if(rear==front)
+	{
+		cout<<"Disk Empty";
+	}
+
+else
+{ char d[54];
+	d[j]=q[front];
+	dispd();
+	front=(front+1)%10;
+	j++;
+}
+}
+
+void display()
+{
+	int i;
+cout<<"In Buffer\n";
+for(i=0;i<MAX;i++)
+{
+	cout<<q[i];
+}
+cout<<"\n";
+}
+
+int main()
+{
+	while(isfull()!=1)
+	{
+		write();
+	}
+int n;
+display();
+while(n!=2)
+{
+cout<<"1 to read\n";
+cout<<"2 to exit\n";
+cin>>n;
+
+switch(n)
+{
+case 1:read();
+write();
+display();
+}
+}
+}
+
+
+7.
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+struct node
+{
+    char data;
+    struct node *next;
+};
+struct node* last=NULL;
+
+string a[]={"Friends","Love","Affection","Marriage","Enmity","Sister"};
+void create(char b)
+{
+    struct node *temp;
+    temp=new(struct node);
+    temp->data=b;
+    if(last==NULL)
+    {
+        temp->next=temp;
+        last=temp;
+    }
+    else
+    {
+        temp->next=last->next;
+        last->next=temp;
+        last=temp;
+    }
+}
+
+void playGamel(int n)
+{
+	struct node *temp,*q;int i=0;
+	q=last->next;
+	while(i!=n-1)
+        {
+            q=q->next;
+            i++;
+        }
+    temp=q->next;
+    q->next=temp->next;
+    delete(temp);
+    q=last->next;
+    while(q->next!=last->next)
+    {
+		for(i=0;i<6;i++)
+		{
+			if(a[i][0]==q->data){cout<<"Flame result : "<<a[i]<<endl;break;}
+		}
+		q=q->next;
+	}
+}
+char playGamem(int n)
+{
+    struct node *temp,*q;
+    q=last->next;
+    int d=0;
+    while(d!=5)
+    {
+        int i=1;
+        while(i!=n-1)
+        {
+            q=q->next;
+            i++;
+        }
+        temp=q->next;
+        q->next=temp->next;
+        delete(temp);
+        d++;
+    }
+    return (q->data);
+}
+
+char playGameh(int n)
+{
+	struct node *temp,*q;
+    q=last->next;
+    int d=0;
+    while(d!=5)
+    {
+        int i=1;
+        while(i!=n-1)
+        {
+            q=q->next;
+            i++;
+        }
+        temp=q->next;
+        q->next=temp->next;
+        temp->next=last->next;
+        last->next=temp;
+        last=temp;
+        d++;
+    }
+    return (q->data);
+}
+int main()
+{
+    int ch;
+    string a[]={"Friends","Love","Affection","Marriage","Enmity","Sister"};
+    while(ch!=3)
+    {
+        cout<<"\n1-Create Flame List to Play\n2-Play Game\n3-Exit\nenter your choice : ";
+        cin>>ch;
+        if(ch==1)
+        {
+            int i;
+            for(i=0;i<6;i++)
+            {
+                create(a[i][0]);
+            }
+            cout<<"List is ready Now you can Play\n";
+        }
+        else if(ch==2)
+        {
+            string s1,s2,x,y;
+            cout<<"enter name 1 : ";
+            cin>>s1;
+            cout<<"enter name 2 : ";
+            cin>>s2;
+            x=s1;y=s2;
+            int n1=0,n2=0,n;
+            int i,j;
+            for(i=0;i<x.size();i++)
+            {
+                for(j=0;j<y.size();j++)
+                {
+                    if(x[i]==y[j]){n1++;y[j]='*';break;}
+                }
+            }
+            x=s1;y=s2;
+            for(i=0;i<y.size();i++)
+            {
+                for(j=0;j<x.size();j++)
+                {
+                    if(y[i]==x[j]){n2++;x[j]='*';break;}
+                }
+            }
+            n=s1.size()-n1+s2.size()-n2;
+            cout<<"\n1-LOW LEVEL\n2-MIDDLE LEVEL\n3-HIGH LEVEL\n";
+            int k;
+            cin>>k;
+            cout<<"Number of uncommon letters in two name : "<<n<<endl;
+            if(k==1)
+            {
+				playGamel(n);
+			}
+			else if(k==2)
+			{
+				char ans=playGamem(n);
+				for(i=0;i<6;i++)
+				{
+					if(a[i][0]==ans){cout<<"Flame result : "<<a[i];break;}
+				}
+			}
+			else
+			{
+				char ans=playGameh(n);
+				for(i=0;i<6;i++)
+				{
+					if(a[i][0]==ans){cout<<"Flame result : "<<a[i];break;}
+				}
+			}
+        }
+        else
+        {
+            break;
+        }
+    }
+}
