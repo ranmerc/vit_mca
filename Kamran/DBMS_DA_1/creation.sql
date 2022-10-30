@@ -31,6 +31,9 @@ CREATE TABLE PROFESSOR(
     MOBILE NUMBER,
     SPECIALITY VARCHAR(50),
     CONSTRAINT PROFESSOR_PROF_ID_PK PRIMARY KEY(PROF_ID),
+ -- 1. (i) Prof_id must have exactly five characters and their email
+ -- and mobile number are unique. The email address must have @ as one of the
+ -- characters and mobile number must have exactly ten characters.
     CONSTRAINT PROFESSOR_PROF_ID_LEN_5 CHECK(LENGTH(PROF_ID) = 5),
     CONSTRAINT PROFESSOR_MOBILE_NO_UNIQUE UNIQUE(MOBILE),
     CONSTRAINT PROFESSOR_EMAIL_UNIQUE UNIQUE(EMAIL),
@@ -71,6 +74,8 @@ CREATE TABLE SEMESTER(
     SDATE DATE,
     EDATE DATE,
     CONSTRAINT SEMESTER_SEM_CODE PRIMARY KEY(SEM_CODE),
+ -- 1. (iii) The Sem_code should start with either ‘Win’ or ‘Fall’ and Term column can
+ -- assume only one of two values {Winter, Fall}.
     CONSTRAINT SEMESTER_SEM_CODE_START CHECK(SEM_CODE LIKE 'WIN%' OR SEM_CODE LIKE 'FALL%'),
     CONSTRAINT SEMESTER_TERM_ONLY CHECK(TERM LIKE 'Winter' OR TERM LIKE 'Fall')
 );
@@ -101,6 +106,8 @@ CREATE TABLE STUDENT(
     DEPT_ID VARCHAR(10),
     PROF_ID VARCHAR(10),
     CONSTRAINT STUDENT_REG_NO_PK PRIMARY KEY(REG_NO),
+ -- 1. (iv) Email and mobile column in student table should have same characteristics
+ -- as those in professor table.
     CONSTRAINT STUDENT_MOBILE_NO_UNIQUE UNIQUE(MOBILE),
     CONSTRAINT STUDENT_EMAIL_UNIQUE UNIQUE(EMAIL),
     CONSTRAINT STUDENT_EMAIL_AT CHECK(EMAIL LIKE '%@%'),
@@ -115,6 +122,9 @@ CREATE TABLE ENROLL(
     ENROLL_TIME TIMESTAMP,
     GRADE VARCHAR(1),
     CONSTRAINT ENROLL_PK PRIMARY KEY(CLS_CODE, REG_NO),
+ -- (v) The enroll_time in the enroll table should be of timestamp data type without
+ -- fractional parts of seconds. The grade may assume one of the values in
+ -- {‘S’, ‘A’, ‘B’, ‘C’,  ‘D’,  ‘C’,  ‘F’}. The grade F indicates Failed.
     CONSTRAINT GRADE_IN CHECK (GRADE IN ('S', 'A', 'B', 'C', 'D', 'E', 'F')),
     CONSTRAINT ENROLL_CLS_CODE_FK FOREIGN KEY(CLS_CODE) REFERENCES CLASS(CLS_CODE) ON DELETE CASCADE,
     CONSTRAINT ENROLL_REG_NO_FK FOREIGN KEY(REG_NO) REFERENCES STUDENT(REG_NO) ON DELETE CASCADE
