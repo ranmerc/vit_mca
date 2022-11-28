@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void linearSearch(int a[], int n, int key)
+{
+    int cnt = 0;
+    for (; cnt < n; cnt++)
+    {
+        if (a[cnt] == key)
+        {
+            cout << "\nKey found at position " << cnt;
+            break;
+        }
+    }
+    if (cnt >= n)
+        cout << "\nKey not found" << endl;
+
+    cout << "No of comparisions " << cnt;
+}
+
+int main()
+{
+    int a[] = {3, 4, 67, 1, 23, 44, 98, 12, 34, 23};
+    int n = 10;
+
+    cout << "Enter the Key : " << endl;
+    int key;
+    cin >> key;
+    linearSearch(a, n, key);
+    return 0;
+}
