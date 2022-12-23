@@ -1,0 +1,77 @@
+-- @queries.sql
+
+COLUMN PROJECT_NUMBER HEADING 'PROJECT|NUMBER' FORMAT 9;
+
+COLUMN NAME FORMAT A20;
+
+COLUMN LOCATION FORMAT A20;
+
+COLUMN CONTROLLING_DEPARTMENT FORMAT 99;
+
+COLUMN BUDGET FORMAT 9999;
+
+COLUMN UPPER(NAME) FORMAT A15;
+
+COLUMN LOWER(NAME) FORMAT A15;
+
+COLUMN SSN FORMAT 99;
+
+COLUMN SALARY FORMAT 999999;
+
+COLUMN NAME FORMAT A10;
+
+COLUMN ADDRESS FORMAT A20;
+
+COLUMN DESIGNATION FORMAT A10;
+
+COLUMN SUPERVISORSSN FORMAT 99;
+
+COLUMN DEPT FORMAT 9;
+
+
+SELECT *FROM WORKS_ON;
+
+SELECT *FROM PROJECT;
+
+SELECT *FROM DEPT;
+
+SELECT *FROM EMPLOYEE;
+
+-- (1) Project names which are in a particular location
+SELECT
+    *
+FROM
+    PROJECT
+WHERE
+    LOWER(LOCATION) LIKE '%l1%';
+
+-- (2) Retrieve the employee whose name end with A.
+SELECT
+    *
+FROM 
+    EMPLOYEE
+WHERE
+    LOWER(NAME) LIKE '%a';
+
+-- (3) Department details which has a nomanager
+
+SELECT
+    *
+FROM
+    DEPT
+WHERE 
+    MANAGERSSN IS NULL;
+
+-- (4) Display all the department names in upper case and lower case.
+SELECT
+    UPPER(NAME), LOWER(NAME)
+FROM
+    DEPT;
+
+-- (5) Find the employee who have taken the salary more than 50000.
+SELECT
+    *
+FROM
+    EMPLOYEE
+WHERE
+    SALARY > 50000;
