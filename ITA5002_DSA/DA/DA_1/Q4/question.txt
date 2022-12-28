@@ -1,0 +1,3 @@
+Develop a program to merge two Linked List and remove the
+duplicated in it. The linked can be chosen as Singly Linked List or
+Doubly Linked List as per your choice.

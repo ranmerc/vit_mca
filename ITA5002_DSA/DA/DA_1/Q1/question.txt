@@ -1,0 +1,7 @@
+Develop a program to find the parity is EVEN PARITY or ODD
+PARITY of the given ERROR DETECTION CODE given as the input
+string. The given input string contains only the binary digits (bits) either
+0 or 1. Assume the input string is of the half word length i.e. 16 bits and
+the last bit is allocated to assign the parity. The parity bit ZERO i.e 0
+represents EVEN PARITY and the parity bit ONE i.e 1 represents ODD
+PARITY.
