@@ -15,8 +15,31 @@ BEGIN
 END;
 /
 
+DELETE FROM STUDENT
+WHERE
+    STUDENTID = 22006;
+
+INSERT INTO STUDENT VALUES(
+    '22006',
+    'lower',
+    'lastname',
+    25,
+    'BCA',
+    'lower@gmail.com'
+);
+
+SELECT
+    *
+FROM
+    STUDENT;
+
 -- To write a Cursor to display the list of STUDENTS who are enrolled in CSE and
 -- MCA branch
+SELECT
+    *
+FROM
+    STUDENT;
+
 DECLARE
     CURSOR MCA_CSE_BRANCH_STUDENT IS
         SELECT
