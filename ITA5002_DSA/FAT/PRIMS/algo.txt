@@ -1,0 +1,43 @@
+The steps for implementing Prim's algorithm are as follows:
+
+    Initialize the minimum spanning tree with a vertex chosen at random.
+    Find all the edges that connect the tree to new vertices, find the minimum and add it to the tree
+    Keep repeating step 2 until we get a minimum spanning tree
+
+T = ∅;
+U = { 1 };
+while (U ≠ V)
+    let (u, v) be the lowest cost edge such that u ∈ U and v ∈ V - U;
+    T = T ∪ {(u, v)}
+    U = U ∪ {v}
+
+The steps to implement the prim's algorithm are given as follows -
+
+    First, we have to initialize an MST with the randomly chosen vertex.
+    Now, we have to find all the edges that connect the tree in the above step with the new vertices. From the edges found, select the minimum edge and add it to the tree.
+    Repeat step 2 until the minimum spanning tree is formed.
+
+Follow the given steps to find MST using Prim’s Algorithm:
+
+    Create a set mstSet that keeps track of vertices already included in MST. 
+    Assign a key value to all vertices in the input graph. Initialize all key values as INFINITE. Assign the key value as 0 for the first vertex so that it is picked first. 
+    While mstSet doesn’t include all vertices 
+        Pick a vertex u which is not there in mstSet and has a minimum key value. 
+        Include u in the mstSet. 
+        Update the key value of all adjacent vertices of u. To update the key values, iterate through all adjacent vertices. For every adjacent vertex v, if the weight of edge u-v is less than the previous key value of v, update the key value as the weight of u-v
+
+
+PRIM(G, w, r):
+ for each u in G:
+   u.key = INF
+   u.p = NIL
+ r.key = 0
+ Q = G
+ while Q is not empty:
+   u = EXTRACT-MIN(Q)
+   for each v in Adj[u]:
+     if v in Q and w(u, v) < v.key:
+       v.p = u
+       v.key = w(u, v)
+ return G
+ where ‘G’ is the graph, w is the weight function, r is the root node, ‘Q’ is a priority queue (heap) containing all the nodes in the graph, ‘Adj[u]’ is the list of neighbors of node ‘u’, and ‘EXTRACT-MIN(Q)‘ extracts the node with the minimum key value from the priority queue ‘Q’.

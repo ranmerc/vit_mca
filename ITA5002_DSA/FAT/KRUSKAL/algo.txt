@@ -1,0 +1,28 @@
+Below are the steps for finding MST using Kruskal’s algorithm:
+
+    Sort all the edges in non-decreasing order of their weight. 
+    Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If the cycle is not formed, include this edge. Else, discard it. 
+    Repeat step#2 until there are (V-1) edges in the spanning tree.
+
+KRUSKAL(G):
+A = ∅
+For each vertex v ∈ G.V:
+    MAKE-SET(v)
+For each edge (u, v) ∈ G.E ordered by increasing order by weight(u, v):
+    if FIND-SET(u) ≠ FIND-SET(v):       
+    A = A ∪ {(u, v)}
+    UNION(u, v)
+return A
+
+MST_Kruskal(Edges, V, E):
+    e=0, i=0
+    sum=0
+    Sort(Edges)
+    while(e<V-1):
+        u=Edges[i].u
+        v=Edges[i].v
+        if(Adding edge {u, v} do not form cycle):
+            Print(Adding edge {u, v} to MST)
+            sum+=Edges[i].weight
+            e+=1
+        i+=1

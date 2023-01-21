@@ -65,6 +65,7 @@ public class Graph {
             }
 
             componentSet.union(edgeList.get(i).get(1), edgeList.get(i).get(2));
+            componentSet.print();
             cost += edgeList.get(i).get(0);
         }
 

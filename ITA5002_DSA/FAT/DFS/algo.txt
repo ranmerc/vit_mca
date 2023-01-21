@@ -1,0 +1,19 @@
+Follow the below steps to solve the problem:
+
+    Create a recursive function that takes the index of the node and a visited array.
+    Mark the current node as visited and print the node.
+    Traverse all the adjacent and unmarked nodes and call the recursive function with the index of the adjacent node.
+
+DFS(G,v)   ( v is the vertex where the search starts )
+         Stack S := {};   ( start with an empty stack )
+         for each vertex u, set visited[u] := false;
+         push S, v;
+         while (S is not empty) do
+            u := pop S;
+            if (not visited[u]) then
+               visited[u] := true;
+               for each unvisited neighbour w of u
+                  push S, w;
+            end if
+         end while
+      END DFS()

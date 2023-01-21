@@ -1,0 +1,62 @@
+public class Stack {
+    private int size;
+    private int lastFreeIndex;
+    private int[] array;
+
+    Stack(int numberOfElements) {
+        array = new int[numberOfElements];
+        size = numberOfElements;
+        lastFreeIndex = 0;
+    }
+
+    public boolean isEmpty() {
+        return lastFreeIndex == 0;
+    }
+
+    public boolean isFull() {
+        return lastFreeIndex >= size;
+    }
+
+    public int size() {
+        return lastFreeIndex + 1;
+    }
+
+    public int peek() {
+        return array[lastFreeIndex - 1];
+    }
+
+    public boolean push(int element) {
+        if (isFull()) {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+
+        System.out.println("Pushed " + (char) (65 + element) + " into the stack");
+        array[lastFreeIndex++] = element;
+        return true;
+    }
+
+    public Integer pop() {
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
+            return null;
+        }
+
+        lastFreeIndex--;
+        int element = array[lastFreeIndex];
+        System.out.println("Popped " + (char) (65 + element) + " from the stack");
+        return element;
+    }
+
+    public void print() {
+        if (isEmpty()) {
+            System.out.println("Stack Empty");
+        }
+
+        for (int i = 0; i < lastFreeIndex; i++) {
+            System.out.print((char) (array[i] + 65) + " ");
+        }
+
+        System.out.println("\n");
+    }
+}

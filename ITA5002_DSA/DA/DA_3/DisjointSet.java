@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class DisjointSet {
     private int parentArray[];
     private int numberOfElements;
@@ -28,5 +31,23 @@ public class DisjointSet {
         } else {
             parentArray[parente1] = parente2;
         }
+    }
+
+    void print() {
+        HashMap<Integer, ArrayList<Integer>> sets = new HashMap<>();
+
+        for (int i = 0; i < numberOfElements; i++) {
+            int parentElement = parent(i);
+
+            if (sets.containsKey(parentElement)) {
+                sets.get(parentElement).add(i);
+            } else {
+                ArrayList<Integer> list = new ArrayList<>();
+                list.add(i);
+                sets.put(parentElement, list);
+            }
+        }
+
+        System.out.println(sets);
     }
 }
