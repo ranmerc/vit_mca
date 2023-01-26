@@ -15,7 +15,7 @@ alpha = 0.05
 
 t.test(x, y, paired = TRUE)
 
-talpha = qt(1 - alpha/2, df = length(x) - 1)
+talpha = qt(alpha, df = length(x) - 1)
 
 talpha
 
