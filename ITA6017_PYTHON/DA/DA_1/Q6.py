@@ -12,6 +12,10 @@ def distBetPoints(p1, p2):
 print("Enter number of points: ")
 noOfPoints = int(input())
 
+if noOfPoints < 2:
+    print("Enter at least two points for comparison")
+    exit()
+
 points = []
 
 print("\nEnter points: ")
@@ -27,7 +31,8 @@ for i in range(noOfPoints):
 distanceMap = {}
 
 for i in range(noOfPoints - 1):
-    distanceMap[points[i], points[i + 1]] = distBetPoints(points[i], points[i + 1])
+    for j in range(i + 1, noOfPoints):
+        distanceMap[points[i], points[j]] = distBetPoints(points[i], points[j])
 
 maxDistance = float("-inf")
 maxDistancePoint = points[0]
@@ -38,9 +43,9 @@ for points, distance in distanceMap.items():
 
 print(
     "Max distance is between points "
-    + str(points[0])
+    + str(maxDistancePoint[0])
     + " and "
-    + str(points[1])
+    + str(maxDistancePoint[1])
     + " having distance "
     + str(maxDistance)
 )
