@@ -1,33 +1,33 @@
 print("Enter number of S grades: ")
-while (True):
+while True:
     numberOfSGrades = int(input())
 
-    if (numberOfSGrades >= 0):
+    if numberOfSGrades >= 0:
         break
 
-    print("Number of grades should be positive")
+    print("Invalid input")
 
 print("Enter attendance percentage: ")
-while (True):
+while True:
     attendance = int(input())
 
-    if (attendance >= 0):
+    if attendance >= 0:
         break
 
-    print("Attendance should be positive")
+    print("Invalid input")
 
 print("Enter participation in sports activity: ")
-while (True):
+while True:
     participation = int(input())
 
-    if (participation >= 0):
+    if participation >= 0:
         break
 
-    print("Participation should be positive")
+    print("Invalid input")
 
-if (numberOfSGrades >= 3):
-    if (attendance >= 90):
-        if (participation >= 2):
-            print("Excellent")
-        else:
-            print("Very good")
+if numberOfSGrades >= 3 and attendance >= 90 and participation >= 2:
+    print("Excellent")
+elif numberOfSGrades >= 3 and attendance >= 90:
+    print("Very Good")
+elif numberOfSGrades >= 3 and participation >= 2:
+    print("Good")
