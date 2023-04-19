@@ -12,13 +12,13 @@ if diff >= 20:
     grade = "S"
 elif diff >= 10:
     grade = "A"
-elif diff <= 5 and diff >= -5:
+elif -5 <= diff <= 5:
     grade = "B"
-elif diff >= -10:
+elif -10 <= diff <= -6:
     grade = "C"
-elif diff >= -15:
+elif -15 <= diff <= -11:
     grade = "D"
-elif diff < -20:
+else:
     grade = "F"
 
 print("Grade secured by the student: " + grade)
