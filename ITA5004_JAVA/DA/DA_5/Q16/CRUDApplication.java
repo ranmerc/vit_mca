@@ -29,6 +29,9 @@ public class CRUDApplication extends JFrame {
     createButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         createRecord();
+        idField.setText("");
+        nameField.setText("");
+        emailField.setText("");
       }
     });
 
@@ -41,12 +44,18 @@ public class CRUDApplication extends JFrame {
     updateButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         updateRecord();
+        idField.setText("");
+        nameField.setText("");
+        emailField.setText("");
       }
     });
 
     deleteButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         deleteRecord();
+        idField.setText("");
+        nameField.setText("");
+        emailField.setText("");
       }
     });
 

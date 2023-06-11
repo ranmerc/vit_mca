@@ -35,6 +35,7 @@ public class Recruitment implements Comparable<Recruitment> {
     sb.append("Qualification: " + this.qualification + "\n");
     sb.append("Experience: " + this.experience + "\n");
     sb.append("Date of Birth: " + this.dob + "\n");
+    sb.append("Gender: " + this.gender);
 
     return sb.toString();
   }

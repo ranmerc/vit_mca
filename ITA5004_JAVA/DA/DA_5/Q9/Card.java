@@ -1,5 +1,4 @@
 public class Card {
-  // cardno, cust_name, bank_name
   protected int cardno;
   protected String cust_name;
   protected String bank_name;

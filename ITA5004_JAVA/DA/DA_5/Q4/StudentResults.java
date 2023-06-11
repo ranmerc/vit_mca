@@ -1,6 +1,4 @@
-import java.util.Iterator;
-
-public class StudentResults implements Comparable<StudentResults>, Iterable<StudentResults> {
+public class StudentResults implements Comparable<StudentResults> {
   private String regNo;
   private String name;
   private String branch;

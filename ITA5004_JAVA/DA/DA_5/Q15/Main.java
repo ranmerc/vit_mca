@@ -1,14 +1,3 @@
-/* Create several inpatients and outpatients and admit them to the hospital 
-o Display the list of patients in the hospital 
-o Add some medical records for the patients, both laboratory reports and 
-radiology images 
-o Display the list of medical records for a given patient 
-o Delete some medical records for the patients 
-o Discharge some of the patients from the hospital 
-o Display the list of patients in the hospital again to show the updated list of 
-patients
- */
-
 import Hospital.Hospital;
 import MedicalRecord.LaboratoryReport;
 import MedicalRecord.RadiologyImage;

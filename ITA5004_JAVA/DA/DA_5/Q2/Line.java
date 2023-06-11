@@ -11,7 +11,7 @@ public class Line {
     this.y2 = y2;
   }
 
-  // public double length() {
-  // return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-  // }
+  public double length() {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+  }
 }
