@@ -24,8 +24,6 @@ public class CRUDApplication extends JFrame {
         deleteButton = new JButton("Delete Employee");
 
         resultTable = new JTable();
-        resultTable.setEnabled(false);
-        resultTable.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
 
         createButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -62,7 +60,7 @@ public class CRUDApplication extends JFrame {
             String url = "jdbc:postgresql://localhost:5432/" + DATABASE_NAME;
             connection = DriverManager.getConnection(url, DATABASE_USERNAME, DATABASE_PASSWORD);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             JOptionPane.showMessageDialog(this, "Failed to connect to the database.", "Error",
                     JOptionPane.ERROR_MESSAGE);
             System.exit(1);
@@ -120,7 +118,7 @@ public class CRUDApplication extends JFrame {
             JOptionPane.showMessageDialog(this, "Record created successfully.", "Success",
                     JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             JOptionPane.showMessageDialog(this, "Failed to create the record.", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -180,7 +178,7 @@ public class CRUDApplication extends JFrame {
                 JOptionPane.showMessageDialog(this, "Record not found.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             JOptionPane.showMessageDialog(this, "Failed to update the record.", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -231,7 +229,7 @@ public class CRUDApplication extends JFrame {
                 JOptionPane.showMessageDialog(this, "Record not found.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             JOptionPane.showMessageDialog(this, "Failed to delete the record.", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -265,7 +263,7 @@ public class CRUDApplication extends JFrame {
                 resultTable.setModel(tableModel);
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             JOptionPane.showMessageDialog(this, "Failed to retrieve records.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
