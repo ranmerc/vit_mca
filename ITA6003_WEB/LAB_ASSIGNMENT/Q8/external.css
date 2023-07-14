@@ -1,0 +1,11 @@
+body {
+  background-color: lightgreen;
+  height: 100vh;
+}
+
+.textPart {
+  background-color: lightseagreen;
+  padding: 50px 100px;
+  margin-left: 900px;
+  border-radius: 20px;
+}
