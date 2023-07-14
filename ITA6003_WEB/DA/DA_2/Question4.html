@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>22MCA0223 - Question 4</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      img {
+        height: 60px;
+        width: 70px;
+      }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+      }
+
+      header h1 {
+        color: red;
+        font-size: 50px;
+      }
+
+      table {
+        width: 30%;
+        height: fit-content;
+      }
+
+      td {
+        text-align: left;
+        justify-content: center;
+        height: 4vh;
+      }
+
+      button {
+        padding: 5px 10px;
+      }
+
+      .field {
+        display: flex;
+        width: 10%;
+        margin: 5px auto;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+      }
+
+      .checkbox {
+        display: flex;
+        column-gap: 0.5rem;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <header>
+        <img src="./photo.png" alt="w3schools.com" />
+        <h1>Employee Registration Form</h1>
+      </header>
+    </center>
+    <center>
+      <form action="#">
+        <table>
+          <tr>
+            <fieldset class="field">
+              <input type="radio" id="mr" name="gender" value="Mr" checked />
+              <label for="mr">Mr.</label><br />
+              <input type="radio" id="mrs" name="gender" value="Mrs" />
+              <label for="mrs">Mrs.</label><br />
+              <input type="radio" id="ms" name="gender" value="Ms." />
+              <label for="ms">Ms.</label><br />
+            </fieldset>
+          </tr>
+
+          <tr>
+            <td>First Name</td>
+            <td>
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="FirstName"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Last Name</td>
+            <td>
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                placeholder="LastName"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Mail Address 1</td>
+            <td><input type="text" id="madd1" name="madd1" /></td>
+          </tr>
+
+          <tr>
+            <td>Mail Address 2</td>
+            <td><input type="text" id="madd2" name="madd2" /></td>
+          </tr>
+
+          <tr>
+            <td>City</td>
+            <td><input type="text" id="city" name="city" /></td>
+          </tr>
+
+          <tr>
+            <td>State</td>
+            <td>
+              <select name="state" id="state">
+                <option value="gujrat">Gujrat</option>
+                <option value="maha">Maharashtra</option>
+                <option value="tn">Tamil Nadu</option>
+                <option value="audi">Audi</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>ZIP</td>
+            <td><input type="text" id="zip" name="zip" /></td>
+          </tr>
+
+          <tr>
+            <td>Upload Image</td>
+            <td>
+              <input type="file" id="img" name="img" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>E-Mail</td>
+            <td><input type="text" id="mail" name="mail" /></td>
+          </tr>
+
+          <tr>
+            <td>Mobiile</td>
+            <td>
+              <input type="text" id="mobile" name="mobile" placeholder="+91" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Languages known</td>
+            <td>
+              <div class="checkboxes">
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    id="gujrati"
+                    name="gujarati"
+                    value="Gujarati"
+                    checked=""
+                  />
+                  <label for="gujrati">Gujarati</label>
+                </div>
+
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    id="hindi"
+                    name="hindi"
+                    value="Hindi"
+                    checked
+                  />
+                  <label for="hindi">Hindi</label>
+                </div>
+
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    id="english"
+                    name="english"
+                    value="English"
+                    checked
+                  />
+                  <label for="english">English</label>
+                </div>
+
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    id="marathi"
+                    name="marathi"
+                    value="Marathi"
+                  />
+                  <label for="marathi">Marathi</label><br />
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Additional Information</td>
+            <td>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="8"
+                placeholder="Optional"
+              ></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td>
+              <button>submit</button>
+              <button>reset</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </center>
+  </body>
+</html>
