@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PAT Registration Form</title>
+    <script src="index.js"></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        color: darkgreen;
+        font-size: 2.4rem;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 5px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="number"],
+      input[type="email"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        font-size: 1rem;
+        width: 100%;
+        padding-block: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>PAT Registration Form</h1>
+      <form
+        id="registrationForm"
+        onsubmit="return validateForm()"
+        method="post"
+      >
+        <table cellspacing="10">
+          <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" id="name" required /></td>
+          </tr>
+          <tr>
+            <td><label for="regNumber">Register Number:</label></td>
+            <td><input type="text" id="regNumber" required /></td>
+          </tr>
+          <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" id="password" required /></td>
+          </tr>
+          <tr>
+            <td><label for="confirmPassword">Confirm Password:</label></td>
+            <td><input type="password" id="confirmPassword" required /></td>
+          </tr>
+          <tr>
+            <td><label for="dob">Date of Birth (dd/mm/yy):</label></td>
+            <td><input type="text" id="dob" required /></td>
+          </tr>
+          <tr>
+            <td><label for="age">Age:</label></td>
+            <td><input type="number" id="age" required /></td>
+          </tr>
+          <tr>
+            <td><label for="gender">Gender:</label></td>
+            <td>
+              <label
+                ><input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  required
+                  checked
+                />
+                Male</label
+              >
+              <label
+                ><input type="radio" name="gender" value="female" required />
+                Female</label
+              >
+              <label
+                ><input type="radio" name="gender" value="other" required />
+                Other</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><label for="programme">Programme:</label></td>
+            <td>
+              <select id="programme" required>
+                <option value="no-choice">Select Programme</option>
+                <option value="MCA">MCA</option>
+                <option value="BCA">BCA</option>
+                <option value="BSc">BSc</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="year">Year:</label></td>
+            <td><input type="number" id="year" required /></td>
+          </tr>
+          <tr>
+            <td><label for="semester">Semester:</label></td>
+            <td><input type="number" id="semester" required /></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email Id:</label></td>
+            <td><input type="email" id="email" required /></td>
+          </tr>
+          <tr>
+            <td><label for="areaOfInterest">Area of Interest:</label></td>
+            <td>
+              <div>
+                <label
+                  ><input type="checkbox" name="areaOfInterest" /> Frontend Web
+                </label>
+              </div>
+              <div>
+                <label
+                  ><input type="checkbox" name="areaOfInterest" /> Backend Web
+                </label>
+              </div>
+              <div>
+                <label
+                  ><input type="checkbox" name="areaOfInterest" /> Mobile
+                </label>
+              </div>
+              <div>
+                <label
+                  ><input type="checkbox" name="areaOfInterest" /> Machine
+                  Learning
+                </label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="cgpa">CGPA:</label></td>
+            <td><input type="number" step="0.01" id="cgpa" required /></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input type="submit" value="Register" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </center>
+  </body>
+</html>
