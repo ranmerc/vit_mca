@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Question 9</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: grey;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero {
+        background-color: white;
+        height: 90%;
+        width: 80%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 5em;
+        margin: 30px 0px;
+      }
+
+      p {
+        font-size: 2em;
+        margin: 20px 0px;
+      }
+
+      nav {
+        margin: 20px 0px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        padding: 0px 20px;
+        margin-right: 3px;
+      }
+
+      .mainContent {
+        display: flex;
+      }
+
+      .rating {
+        font-size: 30px;
+        padding: 20px;
+        background-color: green;
+        margin: 5px;
+        height: fit-content;
+        color: white;
+      }
+
+      .mainContent h1 {
+        font-size: 45px;
+      }
+
+      .acclaim {
+        font-size: 30px;
+        margin: 10px 0px;
+      }
+
+      .scoreInformation ul {
+        margin: 50px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <center><h1>WALL - E</h1></center>
+      <p>
+        Walt Disney Studios Motion Pictures | <b>Release Date:</b> Jun 27, 2008
+      </p>
+      <nav>
+        <ul>
+          <li><a href="#">Summary</a></li>
+          <li><a href="#">Critic Reviews</a></li>
+          <li><a href="#">User Reviews</a></li>
+          <li><a href="#">Details and Credits</a></li>
+          <li><a href="#">Trailers and videos</a></li>
+        </ul>
+      </nav>
+
+      <div class="mainContent">
+        <img src="./walle.jpg" alt="source" width="500px" height="300px" />
+        <p class="rating">94</p>
+        <div class="scoreInformation">
+          <h1>Metascore</h1>
+          <div class="acclaim">
+            <div>Universal acclaim</div>
+            <div>based on 39 Critics</div>
+          </div>
+          <ul>
+            <li>Starring: Ben Burtt, Elissa Knight, Jeff Garlin</li>
+            <li>
+              Summary:After hundreds of lonely years of doing what he was built
+              for, Wall-E discovers a new purpose in life when he meets a sleek
+              search robot named EVE. [Walt Disney Pictures]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
