@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fcab00;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.container {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1 {
+  letter-spacing: 2px;
+  margin: 50px;
+  font-size: 42px;
+  color: #fcab00;
+  font-size: 50px;
+}
+
+nav ul {
+  display: flex;
+  column-gap: 3rem;
+  margin-top: 0.8rem;
+  margin-right: 1rem;
+}
+
+.anotherNav {
+  background: linear-gradient(#64a166, #7eb07f);
+  border-bottom: 2px solid white;
+  box-shadow: 2px 2px 10px grey;
+}
+
+.anotherNav ul {
+  display: flex;
+  padding: 10px;
+}
+
+.anotherNav ul li a {
+  margin-right: 1rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.info {
+  background-color: white;
+  padding: 30px;
+  display: flex;
+}
+
+.left {
+  width: 75%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: inset 0px 12px 12px -6px rgba(0, 0, 0, 0.3);
+}
+
+.right {
+  width: 25%;
+  padding: 20px;
+}
+
+.left h2 {
+  color: #4c4e67;
+  letter-spacing: 3px;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.left h3 {
+  color: #ff69fc;
+  font-style: italic;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.left p {
+  color: #897f76;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 50px;
+}
+
+.left span {
+  color: #ff69fc;
+  font-style: italic;
+}
+
+.right h2 {
+  color: white;
+  background: linear-gradient(#64a166, #7eb07f);
+  padding: 7px 5px;
+  letter-spacing: 0.8px;
+}
+
+.right ul {
+  padding: 20px 0px;
+  height: 100%;
+  border-bottom: 1px dotted #897f76;
+}
+
+.right li {
+  margin: 10px 0px;
+}
+
+.right ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #366732;
+}
+
+.footer {
+  width: 100%;
+  padding: 20px 20px 0px 20px;
+  background: linear-gradient(#5b9b69, #2e4f32);
+  color: white;
+}
+
+.footer p {
+  font-size: 20px;
+}
