@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Student Record</title>
+    <script type="text/javascript">
+      function validate() {
+        const name = document.getElementById("name").value;
+        const password = document.getElementById("password").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        let flag = 0;
+
+        if (name.length < 6) {
+          alert("Name should be at least 6 characters long");
+          flag = 1;
+        }
+
+        if (/[A-Za-z]+/.test(name) == false) {
+          alert("Name should contain only alphabets");
+          flag = 1;
+        }
+
+        if (password.length < 6) {
+          alert("Password should be at least 6 characters long");
+          flag = 1;
+        }
+
+        // use regex for email validation
+        if (/[A-Za-z0-9]+@[A-Za-z0-9]+.[A-Za-z0-9]+/.test(email) == false) {
+          alert("Invalid Email");
+          flag = 1;
+        }
+
+        if (phone.length != 10) {
+          alert("Phone number should be 10 digits long");
+          flag = 1;
+        }
+
+        // use regex for phone validation
+        if (/^[0-9]+$/.test(phone) == false) {
+          alert("Phone number should contain only digits");
+          flag = 1;
+        }
+
+        if (flag == 0) {
+          alert("Form submitted successfully");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <td>Name</td>
+          <td><input type="text" id="name" name="name" /></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" id="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="text" id="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td><input type="text" id="phone" name="phone" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="Submit" onclick="validate()" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
